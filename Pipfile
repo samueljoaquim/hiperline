@@ -5,9 +5,14 @@ name = "pypi"
 
 [packages]
 pydantic = "*"
-ipython = "*"
 
 [dev-packages]
+ipython = "*"
+prettytable = "*"
+pytest = "*"
+pre-commit = "*"
+coverage = "*"
+pytest-cov = "*"
 
 [requires]
 python_version = "3.8"
