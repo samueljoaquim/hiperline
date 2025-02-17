@@ -18,28 +18,28 @@ class HashableModel(BaseModel):
 class Item(HashableModel):
     name: str
     start: datetime
-    end: Optional[datetime]
-    started_after = {
+    end: Optional[datetime] = None
+    started_after: dict = {
         "en": "{name} was {time} year(s) short to happen",
         "pt": "Faltava(m) {time} ano(s) para {name} acontecer",
     }
-    was_happening = {
+    was_happening: dict = {
         "en": "{name} had happened {time} year(s) prior",
         "pt": "{name} havia acontecido há {time} ano(s)",
     }
-    ended_before = {
+    ended_before: dict = {
         "en": "{name} had ended {time} year(s) prior",
         "pt": "{name} havia acabado há {time} ano(s)",
     }
 
 
 class Person(Item):
-    started_after = {
+    started_after: dict = {
         "en": "{name} was {time} year(s) short to be born",
         "pt": "Faltava(m) {time} ano(s) para {name} nascer",
     }
-    was_happening = {"en": "{name} had {time} year(s) old", "pt": "{name} tinha {time} ano(s)"}
-    ended_before = {
+    was_happening: dict = {"en": "{name} had {time} year(s) old", "pt": "{name} tinha {time} ano(s)"}
+    ended_before: dict = {
         "en": "{name} had passed away {time} year(s) prior",
         "pt": "{name} havia falecido há {time} ano(s)",
     }
